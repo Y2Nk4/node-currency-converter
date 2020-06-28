@@ -1,6 +1,6 @@
 {
-  "name": "currency-converter",
-  "version": "1.0.0",
+  "name": "@y2nk4/currency-converter",
+  "version": "1.0.1",
   "description": "A currency converter based on currencyconverterapi.com's api",
   "main": "index.js",
   "scripts": {
