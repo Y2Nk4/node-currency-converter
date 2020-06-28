@@ -1,6 +1,9 @@
 # node-currency-converter
 A currency converter based on [currencyconverterapi.com](http://currencyconverterapi.com)'s api
 
+[![Build Status](https://travis-ci.com/Y2Nk4/node-currency-converter.svg?branch=master)](https://travis-ci.com/Y2Nk4/node-currency-converter)
+[![Coverage Status](https://coveralls.io/repos/github/Y2Nk4/node-currency-converter/badge.svg?branch=master)](https://coveralls.io/github/Y2Nk4/node-currency-converter?branch=master)
+
 ## About
 #### Feature
 :fire: Support most of the currency
