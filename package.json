@@ -4,7 +4,8 @@
   "description": "A currency converter based on currencyconverterapi.com's api",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "jest": "^26.1.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0"
   }
 }
