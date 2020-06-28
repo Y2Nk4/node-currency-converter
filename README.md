@@ -11,6 +11,8 @@ This module is based on [currencyconverterapi.com](http://currencyconverterapi.c
 
 **You can get the api key from [free.currencyconverterapi.com](https://free.currencyconverterapi.com/)**
 
+The key used in the example is an example key from [currencyconverterapi.com](http://currencyconverterapi.com). But according to [currencyconverterapi.com](http://currencyconverterapi.com), you **MUST NOT** use this key, and it will get you banned.
+
 ## Install via npm
 ```
 npm i @y2nk4/currency-converter
@@ -20,6 +22,9 @@ npm i @y2nk4/currency-converter
 ```
 let CurrencyConverter = require('@y2nk4/currency-converter')
 
+// Please don't use this sample API key in your environment. 
+// Doing so will get you banned.
+// You may get your free API key at free.currencyconverterapi.com
 let converter = new CurrencyConverter('do-not-use-this-key')
 
 converter.convert('USD', 'CNY', 100)
