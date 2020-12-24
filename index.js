@@ -9,7 +9,7 @@ class CurrencyConverter {
         this.apiKey = apiKey
     }
 
-    convert (fromCurrency, toCurrency, baseAmount = 1.0, isRaw = false) {
+    convert (fromCurrency, toCurrency, baseAmount = 1.0, isRaw = false, date) {
         // validate baseAmount
         baseAmount = parseFloat(baseAmount)
         if (!baseAmount || isNaN(baseAmount)) {
@@ -18,13 +18,16 @@ class CurrencyConverter {
 
         // request api
         return axios.get(
-            `https://free.currconv.com/api/v7/convert?apiKey=${this.apiKey}&q=${fromCurrency}_${toCurrency}&compact=ultra`
+            (date == undefined) ?
+            `https://free.currconv.com/api/v7/convert?apiKey=${this.apiKey}&q=${fromCurrency}_${toCurrency}&compact=ultra` :
+            `https://free.currconv.com/api/v7/convert?apiKey=${this.apiKey}&q=${fromCurrency}_${toCurrency}&compact=ultra&date=${date}`
         ).then((res) => {
             if (isRaw) {
                 return Promise.resolve(res.data)
             }
 
-            let exchangeRate = res.data[`${fromCurrency}_${toCurrency}`]
+            let exchangeRate = (date == undefined) ? res.data[`${fromCurrency}_${toCurrency}`]
+                : res.data[`${fromCurrency}_${toCurrency}`][date]
             if (!exchangeRate) {
                 return Promise.reject(new Error('Currency may be wrong or not supported.'))
             }
