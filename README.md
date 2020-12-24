@@ -32,16 +32,11 @@ let converter = new CurrencyConverter('do-not-use-this-key')
 
 converter.convert('USD', 'CNY', 100)
     .then(console.log, console.error)
-
 // returns 654.0698
-```
-```javascript
-const func = async () => {
-    let audValue = await converter.convert('USD', 'AUD', 1, false, '2019-12-26')
-    console.log(audValue)
-}
-func()
 
+// Query with date
+converter.convert('USD', 'AUD', 1, false, '2019-12-26')
+    .then(console.log, console.error)
 // returns 1.439797
 ```
 
