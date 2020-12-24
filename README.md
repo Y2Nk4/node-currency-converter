@@ -22,7 +22,7 @@ npm i @y2nk4/currency-converter
 ```
 
 ## Examples
-```
+```javascript
 let CurrencyConverter = require('@y2nk4/currency-converter')
 
 // Please don't use this sample API key in your environment. 
@@ -33,16 +33,26 @@ let converter = new CurrencyConverter('do-not-use-this-key')
 converter.convert('USD', 'CNY', 100)
     .then(console.log, console.error)
 
-# returns 707.8404
+// returns 654.0698
+```
+```javascript
+const func = async () => {
+    let audValue = await converter.convert('USD', 'AUD', 1, false, '2019-12-26')
+    console.log(audValue)
+}
+func()
+
+// returns 1.439797
 ```
 
 ## Methods
 
-**convert(fromCurrency, toCurrency, [baseAmount = 1.0, [isRaw = false]])**
+**convert(fromCurrency, toCurrency, [baseAmount = 1.0], [isRaw = false], [date])**
  - `fromCurrency` - three-digit currency code for currency you want to convert from, ex: `USD`
  - `toCurrency` - three-digit currency code for currency you want to convert to, ex: `CNY`
  - `baseAmount` - the amount you want to exchange, float, default: `1.0`
  - `isRaw` - set it to be `true` if you want it to return raw data from the api, default: `false`
+ - `date` - historical single date for data to be pulled from, ex: `2020-07-15`
  
 This method returns the conversion amount in a float number
  - `conversion_amount` - Float Number if `isRaw` set to be false
