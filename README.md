@@ -18,7 +18,7 @@ The key used in the example is an example key from [currencyconverterapi.com](ht
 
 ## Install via npm
 ```
-npm i kowasaur/node-currency-converter
+npm i @y2nk4/currency-converter
 ```
 
 ## Examples
