@@ -18,9 +18,7 @@ class CurrencyConverter {
 
         // request api
         return axios.get(
-            (date == undefined) ?
-            `https://free.currconv.com/api/v7/convert?apiKey=${this.apiKey}&q=${fromCurrency}_${toCurrency}&compact=ultra` :
-            `https://free.currconv.com/api/v7/convert?apiKey=${this.apiKey}&q=${fromCurrency}_${toCurrency}&compact=ultra&date=${date}`
+            `https://free.currconv.com/api/v7/convert?apiKey=${this.apiKey}&q=${fromCurrency}_${toCurrency}&compact=ultra${date ? '&date='+date : '' }`
         ).then((res) => {
             if (isRaw) {
                 return Promise.resolve(res.data)
