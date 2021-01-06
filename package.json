@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Y2Nk4/node-currency-converter#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jest": "^26.1.0"
   },
   "devDependencies": {
